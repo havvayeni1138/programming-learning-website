@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Öneri Şikayet Formu</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('ö.jpg');
+            background-size: 50%;
+            background-position: center;
+            background-attachment: fixed;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(53, 66, 74, 0.8);
+            color: white;
+            padding: 15px 0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 18px;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: #61dafb;
+        }
+        .container {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            width: 500px;
+        }
+        h1 {
+            color: #35424a;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin: 10px 0 5px;
+            font-weight: bold;
+        }
+        input[type="text"], input[type="email"], textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        textarea {
+            resize: none;
+            height: 100px;
+        }
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background-color: #35424a;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html">Ana Sayfa</a>
+        <a href="hakkimda.html">HAKKIMIZDA</a>
+        <a href="projeler.html">PROJELER</a>
+        <a href="iletisim.html">İLETİŞİM</a>
+        <a href="yenikayit.html">KAYIT OL</a>
+        <a href="giris.html">GİRİŞ</a>
+        <a href="egitim.html">EĞİTİMLERİMİZ</a>
+    </nav>
+
+    <div class="container">
+        <h1>Geri Dönüş Formu</h1>
+        <form action="send_mail.php" method="POST">
+            <label for="name">Adınız ve Soyadınız</label>
+            <input type="text" id="name" name="name" placeholder="Adınız" required>
+        
+            <label for="email">E-posta Adresiniz</label>
+            <input type="email" id="email" name="email" placeholder="havvakibar30@gmail.com" required>
+        
+            <label for="message">Görüşleriniz</label>
+            <textarea id="message" name="message" placeholder="Görüşlerinizi buraya yazınız..." required></textarea>
+        
+            <button type="submit" value="GÖNDER">GÖNDER</button>
+        </form>
+        
+    </div>
+</body>
+</html>

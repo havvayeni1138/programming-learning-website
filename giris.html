@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giriş Yap</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('m2.webp');
+            background-size: 50%; 
+            background-position: center;
+            background-attachment: fixed;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        nav {
+            background-color: #35424a;
+            color: white;
+            padding: 15px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            text-align: center; 
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            display: inline-block; 
+        }
+        nav a:hover {
+            background-color: #444;
+        }
+
+        .container {
+            padding: 30px;
+            background-color: rgba(255, 255, 255, 0.9); 
+            width: 40%;
+            margin: 0 auto;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            border-radius: 12px;
+        }
+
+        h2 {
+            color: #35424a;
+            text-align: center;
+        }
+
+        input[type="text"], input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 3px solid #2c3e50; 
+            border-radius: 5px;
+            background-color: #f9f9f9; 
+        }
+
+        button {
+            background-color: #35424a;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            cursor: pointer;
+            width: 100%;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html">ANA SAYFA</a>
+        <a href="hakkimda.html">HAKKIMIZDA</a>
+        <a href="projeler.html">PROJELER</a>
+        <a href="iletisim.html">İLETİŞİM</a>
+        <a href="egitim.html">EĞİTİMLERİMİZ</a>
+        <a href="yenikayit.html"> KAYIT OL</a>
+    </nav>
+
+    <div class="container">
+        <h2>Giriş Yap</h2>
+        <form id="loginForm">
+            <input type="text" id="username" placeholder="Kullanıcı Adı" required><br><br>
+            <input type="password" id="password" placeholder="Şifre" required><br><br>
+            <button type="submit">Giriş Yap</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById("loginForm").addEventListener("submit", function(e) {
+            e.preventDefault();
+            
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+            if (username === "admin" && password === "12345") {
+                alert("Admin olarak giriş yapıldı!");
+                window.location.href = 'egitim.html';  
+                return;
+            }
+            const database = JSON.parse(localStorage.getItem("database")) || [];
+            const user = database.find(user => user.kullaniciadi === username && user.sifre === password);
+
+            if (user) {
+                alert("Giriş başarılı! Eğitim sayfasına yönlendiriliyorsunuz");
+                window.location.href = 'egitim.html'; 
+            } else {
+                alert("Kullanıcı adı veya şifre hatalı!");
+            }
+        });
+    </script>
+
+</body>
+</html>
