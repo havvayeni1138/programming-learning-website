@@ -27,10 +27,11 @@ The main purpose of this project is:
 - ✅ Image Integration
 - ✅ Responsive Design Structure
 - ✅ Clean and User-Friendly Interface
-# 🛠️ Technologies Used
+- 
+ 🛠️ Technologies Used
 
-- HTML5
-- CSS3
+- HTML
+- CSS
 - Basic File Structure Management
 - Git & GitHub (Version Control)
 - GitHub Pages (Deployment)
